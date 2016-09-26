@@ -1,0 +1,14 @@
+<div class="issue-details" ng-class="{'issues-list-loading': searching}">
+    <div class="issue-details-close" ng-click="closeIssue()"></div>
+    <div class="issue-details-title">
+        {{issue.title}}
+        <div class="issue-details-number">
+            #{{issue.number}}
+        </div>
+    </div>
+    <div class="issue-details-body">{{issue.body}}</div>
+    <div class="issue-cell issue-additional-info">
+         opened on {{issue.created_at | date:'dd.MM.yyyy HH:mm:ss'}}  
+         <a class="issue-user-link blue-text-hover" href="{{issue.user.html_url}}">by {{issue.user.login}}</a>
+    </div>
+</div>

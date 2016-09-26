@@ -1,0 +1,323 @@
+.issue {
+	display: inline-block;
+	padding: 2px 5px;
+	margin-right: 10px;
+	margin-top: 5px;
+	border: 1px solid gray;
+	border-radius: 3px;
+	width: 478px;
+	max-height: 40px;
+}
+
+.issue-big-number {
+	display: none;
+    color: #757575;
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+.issue-name {
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.blue-text-hover:hover {
+    color: #4078c0;	
+}
+
+.issue-additional-info {
+	display: block;
+	color: #757575;
+	font-size: 12px;
+	margin-top: 3px;
+}
+
+.issue-user-link {
+	text-decoration: none;
+	color: black;
+	margin-right: 5px;
+	float: right;
+}
+
+.user-avatar-wrapper {
+    width: 36px;
+    height: 36px;
+    float: right;
+    border-radius: 3px;
+}
+
+.user-avatar {
+	width: 36px;
+    height: 36px;
+}
+
+.issues-list {
+	margin: auto;
+	width: 1500px;
+	padding-top: 60px;
+}
+
+.issues-list-loading {
+	background: url("/images/loading.gif") no-repeat scroll center center transparent;
+	background-color: #efefef;
+	height: 100%;
+}
+
+@media screen and (max-width: 1550px) {
+    .issues-list {
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1060px) {
+    .issues-list {
+        width: 500px;
+    }
+    
+    .issues-list.issues-list-min {
+        display: none;
+    }
+}
+
+.issues-list.issues-list-min {
+	width: 500px;
+	float: left;
+}
+
+.issues-list-navigation-btn-container {
+	margin-top: 15px;
+	text-align: center;
+	color: #4078c0;
+}
+
+.issues-list-navigation-btn {
+	position: relative;
+    padding: 7px 12px;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    color: #4078c0;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+}
+
+.issues-list-navigation-btn:hover {
+    text-decoration: none;
+    background-color: #e7e7e7;
+    border-color: #e5e5e5;
+}
+
+.issues-list-navigation-btn.disabled, .issues-list-navigation-btn.disabled:hover {
+	color: #d3d3d3;
+    cursor: default;
+    background-color: #fafafa;
+}
+
+.search-items {
+	width: 500px;
+    position: absolute;
+    top: calc(50% - 70px);
+    left: 50%;
+    margin-left: -248px;
+}
+
+.search-items.searched {
+	          top: 10px;
+-webkit-animation: moveSearchUp 0.5s;
+   -moz-animation: moveSearchUp 0.5s;
+    -ms-animation: moveSearchUp 0.5s;
+     -o-animation: moveSearchUp 0.5s;
+        animation: moveSearchUp 0.5s;
+}
+
+@keyframes moveSearchUp {
+   0% { top: 40%; }
+   100% { top: 10px; }
+}
+
+.search-button, .search-button[disabled]:hover {
+	line-height: 25px;
+	color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
+    background-color: #60b044;
+    background-image: -webkit-linear-gradient(#8add6d, #60b044);
+    background-image: linear-gradient(#8add6d, #60b044);
+    border-color: #5ca941;
+    border-radius: 3px;
+    border-width: 1px;
+}
+
+.search-button[disabled] {
+    opacity: 0.65; 
+    cursor: not-allowed;
+}
+
+.search-button:hover {
+	color: #fff;
+    background-color: #569e3d;
+    background-image: -webkit-linear-gradient(#79d858, #569e3d);
+    background-image: linear-gradient(#79d858, #569e3d);
+    border-color: #4a993e;
+}
+
+.search-input {
+	line-height: 25px;
+	border-width: 1px;
+	width: 210px;
+	padding: 2px 5px;
+}
+
+.loading.search-button, .loading.search-button:hover {
+    cursor: wait;
+}
+
+.issues-not-found:after {
+    content: 'Repository contains 0 issues :(';
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 4px 5px;
+    position: relative;
+    top: 10px;
+}
+
+.search-inpit-wrapper {
+	display: inline-block;
+}
+
+.issues-list-loading {
+    background: url("/images/loading.gif") no-repeat scroll center center transparent;
+    background-color: #efefef;
+    height: 100%;
+}
+
+.hide-before-init {
+    display: none;
+}
+
+.initialized.initialized {
+	display: block;
+}
+
+.rate-limits {
+	color: red;
+	margin: auto;
+}
+
+.repos-list {
+	position: absolute;
+	background: #efefef;
+	width: 208px;
+	border: 1px solid gray;
+	overflow: hidden;
+}
+
+.minimized-repo-list {
+	height: 20px;
+}
+
+.minimized-repo-list > .repo-expand {
+	display: block;
+}
+
+.repo-expand {
+	height: 20px;
+    display: none;
+    background: url("/images/arrow-down.png") no-repeat scroll transparent;
+    background-size: contain;
+    padding-left: 20px;
+    cursor: pointer;
+    color: gray;
+}
+
+.repo-minimize {
+	height: 20px;
+    background: url("/images/arrow-up.png") no-repeat scroll transparent;
+    background-size: contain;
+    padding-left: 20px;
+    cursor: pointer;
+    color: gray;
+}
+.repos-not-found {
+    color: red;
+    padding: 2px 5px;
+}
+
+.repo {
+    padding: 2px 0 2px 5px;
+    border-bottom: 1px solid gray;
+}
+
+.repo-text {
+	color: black;
+	cursor: pointer;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.repo-searching {
+	color: gray;
+}
+
+.repo-focused {
+	background-color: lightblue;
+}
+
+.detailView {
+	width: 1000px;
+	height: 100%;
+	padding-top: 60px;
+	float: left;
+}
+
+@media screen and (max-width: 1550px) {
+    .detailView {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 1060px) {
+    .detailView {
+        width: 450px;
+    }
+}
+
+.issue-details-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 30px;
+    word-wrap: break-word;
+    margin-right: 10px;
+}
+
+.issue-details-body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    white-space: pre-line;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.issue-details-number {
+	color: #aaa;
+	display: inline-block;
+}
+
+.issue-details-close {
+	width: 20px;
+	height: 20px;
+	float: right;
+	background: url("/images/cross.png") no-repeat scroll center center transparent;
+	background-size: contain;
+	cursor: pointer;
+}

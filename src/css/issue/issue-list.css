@@ -1,0 +1,68 @@
+.issues-list {
+	margin: auto;
+	width: 1500px;
+	padding-top: 60px;
+}
+
+.issues-list-loading {
+	background: url("/images/loading.gif") no-repeat scroll center center transparent;
+	background-color: #efefef;
+	height: 100%;
+}
+
+@media screen and (max-width: 1550px) {
+    .issues-list {
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1060px) {
+    .issues-list {
+        width: 500px;
+    }
+    
+    .issues-list.issues-list-min {
+        display: none;
+    }
+}
+
+.issues-list.issues-list-min {
+	width: 500px;
+	float: left;
+}
+
+.issues-list-navigation-btn-container {
+	margin-top: 15px;
+	text-align: center;
+	color: #4078c0;
+}
+
+.issues-list-navigation-btn {
+	position: relative;
+    padding: 7px 12px;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    color: #4078c0;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+}
+
+.issues-list-navigation-btn:hover {
+    text-decoration: none;
+    background-color: #e7e7e7;
+    border-color: #e5e5e5;
+}
+
+.issues-list-navigation-btn.disabled, .issues-list-navigation-btn.disabled:hover {
+	color: #d3d3d3;
+    cursor: default;
+    background-color: #fafafa;
+}

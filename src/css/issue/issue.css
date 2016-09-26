@@ -1,0 +1,55 @@
+.issue {
+	display: inline-block;
+	padding: 2px 5px;
+	margin-right: 10px;
+	margin-top: 5px;
+	border: 1px solid gray;
+	border-radius: 3px;
+	width: 478px;
+	max-height: 40px;
+}
+
+.issue-big-number {
+	display: none;
+    color: #757575;
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+.issue-name {
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.blue-text-hover:hover {
+    color: #4078c0;	
+}
+
+.issue-additional-info {
+	display: block;
+	color: #757575;
+	font-size: 12px;
+	margin-top: 3px;
+}
+
+.issue-user-link {
+	text-decoration: none;
+	color: black;
+	margin-right: 5px;
+	float: right;
+}
+
+.user-avatar-wrapper {
+    width: 36px;
+    height: 36px;
+    float: right;
+    border-radius: 3px;
+}
+
+.user-avatar {
+	width: 36px;
+    height: 36px;
+}

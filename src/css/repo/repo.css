@@ -1,0 +1,20 @@
+.repo {
+    padding: 2px 0 2px 5px;
+    border-bottom: 1px solid gray;
+}
+
+.repo-text {
+	color: black;
+	cursor: pointer;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.repo-searching {
+	color: gray;
+}
+
+.repo-focused {
+	background-color: lightblue;
+}

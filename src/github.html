@@ -1,0 +1,91 @@
+<html ng-app="githubIssuesApp">
+    <head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+	    <title>Github Issues Viewer</title>
+	    <link href="/css/issue/issue.css" rel="stylesheet">
+	    <link href="/css/issue/issue-list.css" rel="stylesheet">
+	    <link href="/css/search/search-items.css" rel="stylesheet">
+	    <link href="/css/mainfield.css" rel="stylesheet">
+	    <link href="/css/repo/repos-list.css" rel="stylesheet">
+	    <link href="/css/repo/repo.css" rel="stylesheet">
+	    <link href="/css/detailView/detailView.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="mainfield" ng-controller="GithubController as ctrl" ng-class="{'issues-list-loading': searching}">
+            <div class="rate-limits hide-before-init" 
+                 ng-class="{'initialized': true}"
+                 ng-show="rateLimit">
+                 Github only allows 60 requests per IP per hour (for unregistered apps). Rate limit exceeded, resets in {{getResetsIn()}} sec
+            </div>
+            <div class="search-items" ng-class="{searched: searched || viewIssueDetails(), 'issues-not-found': issuesNotFound()}">
+	            <div class="search-inpit-wrapper">
+		            <input class="search-input" 
+		                   placeholder="User" 
+		                   type="text" 
+		                   ng-model="user" 
+		                   press-key="pressKeyUser"
+		                   on-blur="loadUserReposNow()"
+		                   autofocus>
+	            </div>
+	            <div class="search-inpit-wrapper">
+		            <input class="search-input" 
+		                   placeholder="Repository" 
+		                   type="text" 
+		                   ng-disabled="!user" 
+		                   ng-model="repo"
+		                   focus-me="focusRepoInput"
+		                   press-key="pressKeyRepos"
+		                   on-focus="expandRepos()"
+		                   on-blur="minimizeRepos()"
+		                   readonly>
+		            <div class="repos-list hide-before-init" 
+		                 ng-class="{'minimized-repo-list': minimizeRepoList, 'initialized': true}"
+		                 ng-show="showRepos()">
+		                 <div class="repos-not-found" ng-show="reposNotFound">User was not found</div>
+		                 <div class="repos-not-found" ng-show="repos && repos.length == 0">User has 0 repositories</div>
+		                 <div class="repo-searching" ng-show="searchingRepos">Searching...</div>
+		                 <div class="repo-expand" ng-click="expandRepos()">show repositories...</div>
+		                 <repo ng-repeat="repo in repos" 
+		                       repo="repo" 
+		                       ng-click="selectRepo(repo.name)" 
+		                       focus-me="repo.focus" 
+		                       ng-class="{'repo-focused': repo.focus}">
+		                 </repo>
+		                 <div class="repo-minimize" ng-show="showMinimizeReposBtn()" ng-click="minimizeRepos()">hide repositories...</div>
+		            </div>
+	            </div>
+	            <input class="search-button" 
+	                   type="button" 
+	                   value="Search" 
+	                   ng-click="getIssues(user, repo)"
+	                   ng-class="{loading: searching}" 
+	                   ng-disabled="buttonDisabled()">
+            </div>
+            <div class="issues-list" ng-show="showTable()" ng-class="{'issues-list-min': viewIssueDetails()}">
+                <issue ng-repeat="issue in issues" issue="issue" ng-class="{'issue-minimized': viewIssueDetails()}"></issue>
+                <navigation links="links" per-page-prop="'perPage'" page-prop="'page'" action="'getIssues(user, repo, perPage, page)'"></navigation>
+            </div>
+            <div class="detailView" ng-show="viewIssueDetails()">
+                <ng-view></ng-view>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script src="/js/lib/angular.js"></script>
+<script src="/js/lib/angular-route.js"></script>
+<script src="/js/githubIssuesApp.js"></script>
+<script src="/js/githubIssuesConfig.js"></script>
+<script src="/js/service/githubService.js"></script>
+<script src="/js/service/utilsService.js"></script>
+<script src="/js/controller/githubController.js"></script>
+<script src="/js/controller/navigationCtrl.js"></script>
+<script src="/js/controller/detailViewCtrl.js"></script>
+<script src="/js/controller/issueCtrl.js"></script>
+<script src="/js/directives/keyPressDirective.js"></script>
+<script src="/js/directives/navigationDirective.js"></script>
+<script src="/js/directives/onBlurDirective.js"></script>
+<script src="/js/directives/onFocusDirective.js"></script>
+<script src="/js/directives/issueDirective.js"></script>
+<script src="/js/directives/repoDirective.js"></script>
+<script src="/js/directives/focusMeDirective.js"></script>

@@ -1,0 +1,15 @@
+<div class="navigation">
+	<div class="issues-list-navigation-btn-container hide-before-init" 
+	     ng-class="{'initialized': true}" 
+	     ng-show="links">
+	    <span class="issues-list-navigation-btn" ng-class="{disabled: btnDisabled('first')}" ng-click="navigate('first')">first</span>
+	    <span class="issues-list-navigation-btn" ng-class="{disabled: btnDisabled('prev')}" ng-click="navigate('prev')">previous</span>
+	    <span class="issues-list-navigation-btn disabled">{{page}}</span>
+	    <span class="issues-list-navigation-btn" ng-class="{disabled: btnDisabled('next')}" ng-click="navigate('next')">next</span>
+	    <span class="issues-list-navigation-btn" ng-class="{disabled: btnDisabled('last')}" ng-click="navigate('last')">last</span>
+	</div>
+	<div class="issues-list-navigation-btn-container hide-before-init" ng-class="{'initialized': true}" ng-show="links">
+	   <span ng-repeat="pageCount in pagesCount" class="issues-list-navigation-btn" ng-class="{disabled: perPage == pageCount}" ng-click="setPerPage(pageCount)">{{pageCount}}</span>
+	    issues per page
+	</div>
+</div>

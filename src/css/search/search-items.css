@@ -1,0 +1,70 @@
+.search-items {
+	width: 500px;
+    position: absolute;
+    top: calc(50% - 70px);
+    left: 50%;
+    margin-left: -248px;
+}
+
+.search-items.searched {
+	          top: 10px;
+-webkit-animation: moveSearchUp 0.5s;
+   -moz-animation: moveSearchUp 0.5s;
+    -ms-animation: moveSearchUp 0.5s;
+     -o-animation: moveSearchUp 0.5s;
+        animation: moveSearchUp 0.5s;
+}
+
+@keyframes moveSearchUp {
+   0% { top: 40%; }
+   100% { top: 10px; }
+}
+
+.search-button, .search-button[disabled]:hover {
+	line-height: 25px;
+	color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
+    background-color: #60b044;
+    background-image: -webkit-linear-gradient(#8add6d, #60b044);
+    background-image: linear-gradient(#8add6d, #60b044);
+    border-color: #5ca941;
+    border-radius: 3px;
+    border-width: 1px;
+}
+
+.search-button[disabled] {
+    opacity: 0.65; 
+    cursor: not-allowed;
+}
+
+.search-button:hover {
+	color: #fff;
+    background-color: #569e3d;
+    background-image: -webkit-linear-gradient(#79d858, #569e3d);
+    background-image: linear-gradient(#79d858, #569e3d);
+    border-color: #4a993e;
+}
+
+.search-input {
+	line-height: 25px;
+	border-width: 1px;
+	width: 210px;
+	padding: 2px 5px;
+}
+
+.loading.search-button, .loading.search-button:hover {
+    cursor: wait;
+}
+
+.issues-not-found:after {
+    content: 'Repository contains 0 issues :(';
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 4px 5px;
+    position: relative;
+    top: 10px;
+}
+
+.search-inpit-wrapper {
+	display: inline-block;
+}

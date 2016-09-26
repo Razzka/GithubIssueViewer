@@ -1,0 +1,17 @@
+<script src="/js/lib/angular.js"></script>
+<script src="/js/lib/angular-route.js"></script>
+<script src="/js/githubIssuesApp.js"></script>
+<script src="/js/githubIssuesConfig.js"></script>
+<script src="/js/service/githubService.js"></script>
+<script src="/js/service/utilsService.js"></script>
+<script src="/js/controller/githubController.js"></script>
+<script src="/js/controller/navigationCtrl.js"></script>
+<script src="/js/controller/detailViewCtrl.js"></script>
+<script src="/js/controller/issueCtrl.js"></script>
+<script src="/js/directives/keyPressDirective.js"></script>
+<script src="/js/directives/navigationDirective.js"></script>
+<script src="/js/directives/onBlurDirective.js"></script>
+<script src="/js/directives/onFocusDirective.js"></script>
+<script src="/js/directives/issueDirective.js"></script>
+<script src="/js/directives/repoDirective.js"></script>
+<script src="/js/directives/focusMeDirective.js"></script>

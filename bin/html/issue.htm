@@ -1,0 +1,10 @@
+<div class="issue">
+    <div class="user-avatar-wrapper">
+        <img class="user-avatar" ng-src="{{issue.user.avatar_url}}"></img>
+    </div>
+    <div class="issue-cell issue-name blue-text-hover" title="{{issue.title}}" ng-click="openIssue(issue.number)">{{issue.title}}</div>
+    <div class="issue-cell issue-additional-info">
+         #{{issue.number}} opened on {{issue.created_at | date:'dd.MM.yyyy HH:mm:ss'}}  
+         <a class="issue-user-link blue-text-hover" href="{{issue.user.html_url}}">by {{issue.user.login}}</a>
+    </div>
+</div>

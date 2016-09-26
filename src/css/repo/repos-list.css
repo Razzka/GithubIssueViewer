@@ -1,0 +1,39 @@
+.repos-list {
+	position: absolute;
+	background: #efefef;
+	width: 208px;
+	border: 1px solid gray;
+	overflow: hidden;
+	z-index: 2;
+}
+
+.minimized-repo-list {
+	height: 20px;
+}
+
+.minimized-repo-list > .repo-expand {
+	display: block;
+}
+
+.repo-expand {
+	height: 20px;
+    display: none;
+    background: url("/images/arrow-down.png") no-repeat scroll transparent;
+    background-size: contain;
+    padding-left: 20px;
+    cursor: pointer;
+    color: gray;
+}
+
+.repo-minimize {
+	height: 20px;
+    background: url("/images/arrow-up.png") no-repeat scroll transparent;
+    background-size: contain;
+    padding-left: 20px;
+    cursor: pointer;
+    color: gray;
+}
+.repos-not-found {
+    color: red;
+    padding: 2px 5px;
+}
